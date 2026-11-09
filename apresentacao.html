@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danilo Bonani · Apresentação</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0808;--ink:#F3EDE7;--mute:#A0938D;--line:#2C2222;--red:#E3262F;--wine:#3B0A10;--fd:"Anton",Impact,sans-serif;--fs:"Great Vibes",cursive;--fb:"DM Sans",Arial,sans-serif}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;background:#2a2424;color:var(--ink);font:400 10pt/1.5 var(--fb)}
+.bar{position:sticky;top:0;z-index:5;display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;padding:.8rem;background:#141010;border-bottom:1px solid var(--line)}
+.bar button,.bar a{font:500 .8rem var(--fb);letter-spacing:.12em;text-transform:uppercase;padding:.7rem 1.3rem;border-radius:999px;border:1px solid var(--red);background:var(--red);color:#fff;cursor:pointer;text-decoration:none}
+.bar a{background:transparent;color:var(--ink);border-color:#555}
+.bar p{flex-basis:100%;text-align:center;margin:.2rem 0 0;color:var(--mute);font-size:.8rem}
+.page{width:210mm;height:297mm;margin:1.5rem auto;background:var(--bg);position:relative;overflow:hidden;padding:12mm 13mm;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.page::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 35% at 50% 0%,rgba(154,18,27,.45),transparent 70%),radial-gradient(50% 30% at 100% 100%,rgba(59,10,16,.8),transparent 70%);pointer-events:none}
+.page>*{position:relative;flex-shrink:0}
+.top{display:flex;justify-content:space-between;font:500 7pt var(--fb);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:3mm}
+.top b{color:var(--red);font-weight:500}
+.hero{position:relative;height:91mm;margin-top:1mm}
+.big{position:absolute;left:-13mm;right:-13mm;top:-3mm;margin:0;text-align:center;font:400 36mm/1.15 var(--fd);text-transform:uppercase;background:linear-gradient(180deg,#F02B35 15%,#8E0F18 65%,rgba(60,8,12,.2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.person{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:82mm}
+.hfade{position:absolute;left:-13mm;right:-13mm;bottom:0;height:22mm;background:linear-gradient(transparent,var(--bg))}
+.name{position:absolute;left:0;bottom:4mm;z-index:2}
+.name i{font:400 16pt/1 var(--fs);font-style:normal}
+.name h1{margin:0;font:400 30pt/.9 var(--fd);text-transform:uppercase}
+.name p{margin:2mm 0 0;color:var(--red);font:500 8pt var(--fb);letter-spacing:.16em;text-transform:uppercase}
+.side{position:absolute;right:0;bottom:4mm;z-index:2;width:46mm;font-size:8.5pt;color:#D9D0CA}
+h2{font:400 15pt/1 var(--fd);text-transform:uppercase;margin:0 0 3mm;display:flex;align-items:center;gap:2.5mm}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h2 span{color:var(--red);font-size:9pt}
+.sec{margin-top:4.5mm}
+.about{color:#D9D0CA;margin:0}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+.grid4>div{padding:3mm;border-right:1px solid var(--line)}
+.grid4>div:last-child{border-right:0}
+.grid4 b{display:block;font:500 7.5pt var(--fb);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1mm}
+.grid4 b em{font:400 13pt/1 var(--fd);color:var(--red);font-style:normal;display:block;margin-bottom:1mm}
+.grid4 span{color:var(--mute);font-size:8pt;line-height:1.4;display:block}
+.logos{display:flex;justify-content:space-around;align-items:center;gap:6mm}
+.lg{width:34mm;height:13mm;background:var(--mute);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.gear{list-style:none;margin:0;padding:0}
+.gear li{display:flex;justify-content:space-between;padding:1.6mm 0;border-bottom:1px solid var(--line);font-size:8.5pt}
+.gear li span{color:var(--mute)}
+.quote{margin:0;font-size:8.5pt;color:#D9D0CA}
+.quote::before{content:"\201C";font:400 20pt/0 Georgia,serif;color:var(--red);vertical-align:-6pt;margin-right:1mm}
+.quote cite{display:block;margin-top:1.5mm;color:var(--mute);font:500 7pt var(--fb);letter-spacing:.12em;text-transform:uppercase;font-style:normal}
+.foot{margin-top:auto;display:grid;grid-template-columns:1fr auto;gap:8mm;align-items:center;border:1px solid var(--line);padding:5mm;background:rgba(18,14,14,.85)}
+.foot h3{margin:0;font:400 20pt/.95 var(--fd);text-transform:uppercase}
+.foot h3 em{display:block;font:400 22pt/1 var(--fs);color:var(--red);text-transform:none}
+.foot ul{list-style:none;margin:3mm 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1mm 6mm;font-size:8.5pt}
+.foot ul b{color:var(--red);font-weight:500;margin-right:1.5mm}
+.qr{text-align:center;font:500 6.5pt var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.qr div{width:30mm;height:30mm;background:#fff;padding:2mm;margin-bottom:1.5mm}
+.qr svg{width:100%;height:100%;display:block}
+@media screen and (max-width:820px){.page{zoom:.45}}
+@page{size:A4;margin:0}
+@media print{html,body{background:var(--bg)}.bar{display:none}.page{margin:0;box-shadow:none;zoom:1}}
+</style>
+</head>
+<body>
+<div class="bar"><button onclick="window.print()">Salvar em PDF</button><a href="./">Voltar ao site</a><p>Na janela que abrir, escolha “Salvar como PDF”.</p></div>
+
+<div class="page">
+  <div class="top"><span><b>Videomaker &amp; fotógrafo</b> · Cerquilho e região</span><span>Apresentação 2026</span></div>
+  <div class="hero">
+    <p class="big">Portfólio</p>
+    <img class="person" src="img/01.webp" alt="">
+    <div class="hfade"></div>
+    <div class="name"><i>Olá, eu sou</i><h1>Danilo<br>Bonani</h1><p>Videomaker &amp; fotógrafo</p></div>
+    <div class="side">Direção, captação, edição, color grading e finalização de vídeos para empresas, profissionais e eventos, em vertical e horizontal.</div>
+  </div>
+
+  <div class="sec">
+    <h2>Sobre <span>✦</span></h2>
+    <p class="about">Sou Danilo, de Cerquilho. Estudo Cinema e Audiovisual e trabalho como videomaker e fotógrafo freelancer. Faço o vídeo de ponta a ponta e você fala direto comigo, do briefing à entrega. Meu estilo é limpo: câmera em movimento suave, cortes no ritmo da música, enquadramento pensado e cor natural. Equipamento próprio: câmera Sony ZV-E10, lentes prime e grande angulares, drone DJI, estabilizadores e áudio dedicado.</p>
+  </div>
+
+  <div class="sec">
+    <h2>Frentes de atuação <span>✦</span></h2>
+    <div class="grid4">
+      <div><b>Marketing vertical</b><span>Reels, TikTok e Shorts com roteiro, captação, edição e finalização.</span></div>
+      <div><b>Bastidores</b><span>Montagem, preparação e rotina da equipe no evento.</span></div>
+      <div><b>Eventos e bares</b><span>Cobertura de eventos e vídeos do bar, dos drinks e da estrutura.</span></div>
+      <div><b>Obras e projetos</b><span>Apresentação de obras e projetos de engenharia.</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Empresas com quem já trabalhei <span>✦</span></h2>
+    <div class="logos">
+      <span class="lg" style="--m:url('img/02.webp')"></span><span class="lg" style="--m:url('img/03.webp')"></span><span class="lg" style="--m:url('img/04.webp')"></span><span class="lg" style="--m:url('img/05.webp')"></span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2>Como funciona <span>✦</span></h2>
+    <div class="grid4">
+      <div><b><em>01</em>Conversa</b><span>Objetivo, público e onde o vídeo vai ser usado.</span></div>
+      <div><b><em>02</em>Planejamento</b><span>A ideia, o que será filmado e a data.</span></div>
+      <div><b><em>03</em>Gravação</b><span>No seu espaço, com equipamento leve.</span></div>
+      <div><b><em>04</em>Edição e entrega</b><span>Edição, color grading e formatos de cada rede.</span></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div>
+      <h3>Vamos criar algo <em>incrível</em></h3>
+      <ul><li><b>WhatsApp</b>(15) 99244-5454</li><li><b>Instagram</b>@danilobonani</li><li><b>E-mail</b>bonanidanilo51@gmail.com</li><li><b>Região</b>Cerquilho, Tietê, Tatuí, Piracicaba</li></ul>
+    </div>
+    <div class="qr"><div id="qr"></div>Veja os vídeos</div>
+  </div>
+</div>
+
+<script src="qr.js"></script>
+<script>
+try{var q=qrcode(0,"M");q.addData("https://portifoliodanilobonani.netlify.app/");q.make();document.getElementById("qr").innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});}catch(e){}
+</script>
+</body>
+</html>
