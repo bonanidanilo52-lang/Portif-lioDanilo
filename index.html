@@ -6,14 +6,14 @@
 <title>Danilo Bonani | Videomaker e fotógrafo em Cerquilho e região</title>
 <meta name="description" content="Videomaker e fotógrafo em Cerquilho/SP. Direção, captação, edição, color grading e finalização de vídeos para empresas e eventos.">
 <meta name="theme-color" content="#0A0808">
-<link rel="canonical" href="https://portifoliodanilobonani.netlify.app/">
+<link rel="canonical" href="https://danilobonani.netlify.app/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:url" content="https://portifoliodanilobonani.netlify.app/">
+<meta property="og:url" content="https://danilobonani.netlify.app/">
 <meta property="og:site_name" content="Danilo Bonani">
 <meta property="og:title" content="Danilo Bonani · Videomaker e fotógrafo">
 <meta property="og:description" content="Vídeo e fotografia para empresas e eventos em Cerquilho, Tietê, Tatuí, Piracicaba e região. Peça um orçamento pelo WhatsApp.">
-<meta property="og:image" content="https://portifoliodanilobonani.netlify.app/og.jpg">
+<meta property="og:image" content="https://danilobonani.netlify.app/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Danilo Bonani, videomaker e fotógrafo">
@@ -21,7 +21,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A0808'/%3E%3Ccircle cx='32' cy='32' r='13' fill='%23E3262F'/%3E%3C/svg%3E">
 <link rel="preload" as="image" href="img/01.webp">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Danilo Bonani · Videomaker e fotógrafo","url":"https://portifoliodanilobonani.netlify.app/","image":"https://portifoliodanilobonani.netlify.app/og.jpg","description":"Videomaker e fotógrafo em Cerquilho/SP. Direção, captação, edição, color grading e finalização de vídeos para empresas e eventos. Fotografia de eventos, ensaios e bares.","telephone":"+55 15 99244-5454","email":"bonanidanilo51@gmail.com","founder":{"@type":"Person","name":"Danilo Luiz Bonani","jobTitle":"Videomaker e fotógrafo"},"address":{"@type":"PostalAddress","addressLocality":"Cerquilho","addressRegion":"SP","addressCountry":"BR"},"areaServed":["Cerquilho","Tietê","Tatuí","Piracicaba"],"knowsAbout":["Produção de vídeo","Vídeo vertical para Reels","Cobertura de eventos","Color grading","Fotografia de eventos","Ensaio fotográfico"],"sameAs":["https://www.instagram.com/danilobonani"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Danilo Bonani · Videomaker e fotógrafo","url":"https://danilobonani.netlify.app/","image":"https://danilobonani.netlify.app/og.jpg","description":"Videomaker e fotógrafo em Cerquilho/SP. Direção, captação, edição, color grading e finalização de vídeos para empresas e eventos. Fotografia de eventos, ensaios e bares.","telephone":"+55 15 99244-5454","email":"bonanidanilo51@gmail.com","founder":{"@type":"Person","name":"Danilo Luiz Bonani","jobTitle":"Videomaker e fotógrafo"},"address":{"@type":"PostalAddress","addressLocality":"Cerquilho","addressRegion":"SP","addressCountry":"BR"},"areaServed":["Cerquilho","Tietê","Tatuí","Piracicaba"],"knowsAbout":["Produção de vídeo","Vídeo vertical para Reels","Cobertura de eventos","Color grading","Fotografia de eventos","Ensaio fotográfico"],"sameAs":["https://www.instagram.com/danilobonani"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -197,10 +197,20 @@ nav a:hover{opacity:1;color:var(--red)}
 .trace rect{fill:none;stroke:var(--red);stroke-width:1.5;opacity:0;transition:opacity .35s ease}
 @keyframes trace{to{stroke-dashoffset:-100}}
 .work:hover .trace rect,.hslide:hover .trace rect,.work:focus-visible .trace rect,.hslide:focus-visible .trace rect{opacity:1;animation:trace 3.2s linear infinite}
-.albums{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,320px));gap:1.75rem 1.25rem}
-.album{display:block;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.albums{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,300px));gap:1.75rem 1.1rem;counter-reset:a}
+@media(max-width:560px){.albums{grid-template-columns:1fr 1fr;gap:1.4rem .9rem}}
+.album{display:block;width:100%;padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;counter-increment:a}
 .album .thumb{aspect-ratio:4/5}
-.album h3{font:500 1rem/1.3 var(--fb);text-transform:uppercase;letter-spacing:.06em;margin:.9rem 0 .2rem}
+.album h3{display:flex;gap:.6rem;align-items:baseline;font:500 1rem/1.25 var(--fb);text-transform:uppercase;letter-spacing:.06em;margin:.9rem 0 .2rem}
+.album h3::before{content:counter(a,decimal-leading-zero);font:400 1.5rem/1 var(--fd);color:var(--red);letter-spacing:0}
+.album .ph{position:absolute;z-index:2;right:.7rem;bottom:.7rem;font:500 .66rem var(--fb);letter-spacing:.14em;text-transform:uppercase;background:rgba(10,8,8,.65);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.35rem .7rem;backdrop-filter:blur(4px);transition:all .25s}
+.album:hover .ph{background:var(--red);border-color:var(--red)}
+.album:hover .trace rect,.album:focus-visible .trace rect{opacity:1;animation:trace 3.2s linear infinite}
+.hwrap .sub{display:flex;align-items:center;gap:1rem;margin:0 0 1.2rem}
+.hwrap .sub h3{font:400 clamp(1.3rem,2.4vw,1.8rem)/1 var(--fd);text-transform:uppercase;white-space:nowrap}
+.hwrap .sub .ln{flex:1;height:1px;background:var(--line)}
+.hinfo h3::before{content:attr(data-n);font:400 1.5rem/1 var(--fd);color:var(--red);margin-right:.6rem;letter-spacing:0}
+.hinfo h3{display:flex;align-items:baseline}
 
 /* Sobre */
 .about{display:grid;gap:clamp(2rem,5vw,4.5rem)}
@@ -295,7 +305,7 @@ footer{padding:1.6rem 0 calc(2.4rem + env(safe-area-inset-bottom,0px));color:var
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 footer .thx{color:var(--ink)}
 
-.fab{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 8px 28px rgba(0,0,0,.5);transform:translateY(200%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.fab{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(5.2rem + env(safe-area-inset-bottom,0px));z-index:30;box-shadow:0 8px 28px rgba(0,0,0,.5);transform:translateY(200%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .fab.show{transform:none}
 
 /* Janelas (vídeo e fotos) */
@@ -308,7 +318,14 @@ dialog.show::backdrop{opacity:1}
 .frame iframe{width:100%;height:100%;border:0}
 .empty{height:100%;display:grid;place-content:center;text-align:center;padding:1.5rem;gap:.6rem}
 .dbar{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1rem;gap:1rem;font-size:.95rem}
-.dbar button,.ghead button{background:none;border:1px solid #555;color:#ECEAE4;border-radius:999px;padding:.35rem 1rem;cursor:pointer;font:inherit}
+.dbar button,.ghead button,.chead button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;min-height:2.3rem;padding:0 1.1rem;cursor:pointer;font:500 .72rem var(--fb);letter-spacing:.14em;text-transform:uppercase;transition:all .25s ease}
+.dbar button:hover,.ghead button:hover,.chead button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.dbar{background:#0E0B0B;border-top:1px solid var(--line)}
+.dbar>span:first-child{font:500 .78rem var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.dbar>span:last-child{display:flex;align-items:center;gap:.8rem;color:var(--mute);font-size:.85rem}
+#dopen{color:var(--mute);font-size:.8rem;text-decoration:none;border-bottom:1px solid var(--line)}
+#dopen:hover{color:var(--red);border-color:var(--red)}
+dialog{border:1px solid var(--line)}
 #pdlg{width:min(1500px,96vw)}
 .pstage{position:relative;height:min(86svh,1100px);display:grid;place-items:center;background:#000}
 .pstage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
@@ -359,7 +376,7 @@ header.mopen-h{background:transparent;border-color:transparent;backdrop-filter:n
 
 /* Celular: topo mais curto e títulos alinhados */
 @media(max-width:860px){
-  .htop .lbl:last-child{max-width:12ch}
+  .hm{display:none}
   .big{font-size:22.5vw;margin-top:1rem}
   .person{width:min(80vw,460px);margin-top:-15vw}
   .hleft{margin-top:-30vw}
@@ -455,7 +472,7 @@ header.mopen-h{background:transparent;border-color:transparent;backdrop-filter:n
   <div class="hin">
     <div class="htop">
       <span class="lbl"><b>Videomaker &amp; fotógrafo</b>Cerquilho e região</span>
-      <span class="lbl"><span class="rec" aria-hidden="true">REC</span>Disponível para projetos</span>
+      <span class="lbl"><span class="rec" aria-hidden="true">REC</span>Disponível<span class="hm"> para projetos</span></span>
     </div>
     <p class="big" aria-hidden="true">Portfólio</p>
     <img class="person" alt="Danilo Bonani segurando uma câmera em um estabilizador" width="900" height="1600" decoding="async" src="img/01.webp">
@@ -507,6 +524,8 @@ header.mopen-h{background:transparent;border-color:transparent;backdrop-filter:n
       <div class="grid" id="grid"></div>
       <button class="harr garr next" aria-label="Próximos vídeos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
+    <div class="hwrap" id="hwrap">
+    <div class="sub"><h3>Vídeos horizontais</h3><span class="star">✦</span><span class="ln"></span></div>
     <div class="hcar" id="hcar" data-cat="bastidores">
       <div class="hstage">
         <button class="hslide" aria-label="Assistir ao vídeo"><div class="thumb"><i class="tb"></i><span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg></span></div></button>
@@ -524,8 +543,9 @@ header.mopen-h{background:transparent;border-color:transparent;backdrop-filter:n
       <div class="hinfo"><div><h3></h3><p class="meta"></p><p class="note"></p></div><div class="hnav"><span class="hcount"></span><div class="hdots"></div></div></div>
     </div>
     </div>
+    </div>
     <div id="tab-fotos" class="tabpane" hidden>
-      <p class="lead" style="margin-bottom:2rem">Clique em um álbum para ver as fotos.</p>
+      <p class="lead" style="margin-bottom:2rem">Toque em um álbum para ver as fotos.</p>
       <div class="albums" id="albums"></div>
     </div>
   </div>
@@ -664,7 +684,7 @@ header.mopen-h{background:transparent;border-color:transparent;backdrop-filter:n
 
 <footer><div class="wrap"><span>© 2026 Danilo Luiz Bonani</span><span class="thx">Obrigado pela visita <span class="star">✦</span></span><span>Videomaker &amp; fotógrafo</span></div></footer>
 
-<a class="btn fab js-wa" id="fab" href="#contato"><svg aria-hidden="true"><use href="#i-wa"/></svg>Orçamento no WhatsApp</a>
+<a class="btn fab" id="fab" href="#contato"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento</a>
 
 <dialog id="gdlg" aria-label="Galeria de fotos">
   <div class="ghead"><div><strong id="gtitle"></strong><span id="gmeta"></span></div><button id="gclose">Fechar</button></div>
@@ -683,12 +703,13 @@ header.mopen-h{background:transparent;border-color:transparent;backdrop-filter:n
 
 <dialog id="dlg" aria-label="Vídeo">
   <div class="frame" id="frame"></div>
-  <div class="dbar"><span id="dtitle"></span><span><a id="dopen" href="#" target="_blank" rel="noopener" hidden>Não apareceu? Abrir o vídeo</a> <button id="dclose">Fechar</button></span></div>
+  <div class="dbar"><span id="dtitle"></span><span><a id="dopen" href="#" target="_blank" rel="noopener" hidden title="Não apareceu? Abra o vídeo no site original">Abrir ↗</a> <button id="dclose">Fechar</button></span></div>
 </dialog>
 
 <script>
 /* ===== CONFIGURE AQUI ===== */
-var IMGS={c1:"img/07.webp",c2:"img/08.webp",c3:"img/09.webp",pano:"img/10.webp"};
+var GR="linear-gradient(150deg,#140A0B,#3B0A10 60%,#6E1018)"; /* fundo das capas enquanto a imagem carrega */
+var IMGS={c1:"img/07.webp",c2:"img/08.webp",pano:"img/10.webp"};
 var PHOTOS=["img/11.webp","img/12.webp","img/13.webp"];
 IMGS.jr="img/14.webp";
 var PHOTOS_JR=["img/15.webp","img/16.webp","img/17.webp","img/18.webp","img/19.webp","img/20.webp","img/21.webp","img/22.webp","img/23.webp","img/24.webp"];
@@ -700,25 +721,25 @@ var CONFIG={
   instagram:"https://www.instagram.com/danilobonani",
   reel:"",                              // link de um .mp4 leve para o fundo do topo (opcional)
   horizontal:[   // 3 vídeos do carrossel; u = link do YouTube/Vimeo
-    {t:"Cobertura completa para a cerimonialista",c:"Cerimonialista",k:"Bastidores",cat:"bastidores",n:"A versão mais completa, com a cerimônia, os preparativos e o trabalho da cerimonialista.",u:"https://youtu.be/yshg1NYDmpQ",img:"img/39.webp",g:"linear-gradient(130deg,#16324F,#2B5FFF 60%,#E0953A)"},
-    {t:"Cerimônia e preparativos",c:"Cerimonialista",k:"Cerimônia",cat:"bastidores",n:"Vídeo focado na cerimônia do casamento e nos preparativos.",u:"https://youtu.be/zQhr0ME317c",img:"img/40.webp",g:"linear-gradient(130deg,#3B1F4A,#C2477A 60%,#FFC27A)"},
-    {t:"Bastidores do trabalho da cerimonialista",c:"Cerimonialista",k:"Bastidores",cat:"bastidores",n:"Vídeo focado nos bastidores do casamento e no trabalho da cerimonialista.",u:"https://youtu.be/_Xlgg2e28Bs",img:"img/41.webp",g:"linear-gradient(130deg,#1F2A3A,#4D6A8F 60%,#E0953A)"}
+    {t:"Cobertura completa para a cerimonialista",c:"Cerimonialista",k:"Bastidores",cat:"bastidores",n:"A versão mais completa, com a cerimônia, os preparativos e o trabalho da cerimonialista.",u:"https://youtu.be/yshg1NYDmpQ",img:"img/39.webp"},
+    {t:"Cerimônia e preparativos",c:"Cerimonialista",k:"Cerimônia",cat:"bastidores",n:"Vídeo focado na cerimônia do casamento e nos preparativos.",u:"https://youtu.be/zQhr0ME317c",img:"img/40.webp"},
+    {t:"Bastidores do trabalho da cerimonialista",c:"Cerimonialista",k:"Bastidores",cat:"bastidores",n:"Vídeo focado nos bastidores do casamento e no trabalho da cerimonialista.",u:"https://youtu.be/_Xlgg2e28Bs",img:"img/41.webp"}
   ],
   horizontal2:[   // vídeo horizontal abaixo do carrossel
-    {t:"Evento de carros antigos de Cerquilho",c:"antigomobilistas.cerquilho",k:"Evento",cat:"eventos",n:"Vídeo completo do evento.",u:"https://youtu.be/-nNG_MNxtDU",g:"linear-gradient(130deg,#2A2A2E,#8A4B2A 55%,#E0953A)"}
+    {t:"Evento de carros antigos de Cerquilho",c:"antigomobilistas.cerquilho",k:"Evento",cat:"eventos",n:"Vídeo completo do evento.",u:"https://youtu.be/-nNG_MNxtDU"}
   ],
   works:[   // verticais; em cada item, o campo img:"capa.jpg" é opcional e carrega só quando aparece na tela
-    {t:"Obra do engenheiro",c:"William Lucas Engenheiro",k:"Obras",cat:"obras",n:"Apresentação da obra de uma casa pelo engenheiro.",u:"https://vimeo.com/1238507903",img:"img/42.webp",v:true,g:"linear-gradient(130deg,#0E2233,#1F5A7A 60%,#9DB6C4)"},
-    {t:"Drinks do Dionys",c:"Dionys Cocktail Bar",k:"Bar",cat:"eventos",n:"Os drinks do Dionys servidos em um casamento.",u:"https://youtube.com/shorts/2T1SuvEYIMU",img:IMGS.c1,v:true,g:"linear-gradient(130deg,#2E1F0D,#8C7961 65%,#C9B79E)"},
-    {t:"Drinks do Dionys 2",c:"Dionys Cocktail Bar",k:"Bar",cat:"eventos",n:"Outro momento do bar do Dionys na festa de casamento.",u:"https://youtube.com/shorts/kyGGi0E7Fys",img:IMGS.c2,v:true,g:"linear-gradient(130deg,#3A2812,#8E7756 70%,#D9C8B4)"},
-    {t:"Evento de Halloween",c:"Panobianco Academia",k:"Marketing",cat:"marcas",n:"Vídeo estrutural do evento de Halloween da academia.",u:"https://youtube.com/shorts/stY5KDQRVO4",img:IMGS.pano,v:true,g:"linear-gradient(130deg,#5A1E14,#E2552F 60%,#FFE0B0)"},
-    {t:"Panobianco Academia 2",c:"Panobianco Academia",k:"Marketing",cat:"marcas",n:"Segundo vídeo feito para a academia.",u:"https://youtube.com/shorts/sSCpN7Qy6mk",v:true,g:"linear-gradient(130deg,#5A1E14,#E2552F 60%,#FFE0B0)"},
-    {t:"Panobianco Academia 3",c:"Panobianco Academia",k:"Marketing",cat:"marcas",n:"Terceiro vídeo feito para a academia.",u:"https://youtube.com/shorts/xyLomZXbU-U",v:true,g:"linear-gradient(130deg,#5A1E14,#E2552F 60%,#FFE0B0)"},
-    {t:"Obra do engenheiro 2",c:"William Lucas Engenheiro",k:"Obras",cat:"obras",n:"Segundo vídeo apresentando a obra.",u:"https://youtube.com/shorts/eD_Vx5p5Ti4",v:true,g:"linear-gradient(130deg,#0E2233,#1F5A7A 60%,#9DB6C4)"},
-    {t:"Obra do engenheiro 3",c:"William Lucas Engenheiro",k:"Obras",cat:"obras",n:"Terceiro vídeo apresentando a obra.",u:"https://youtube.com/shorts/vPe7XS-DW-I",v:true,g:"linear-gradient(130deg,#0E2233,#1F5A7A 60%,#9DB6C4)"},
-    {t:"New Football 1",c:"New Football",k:"Marketing",cat:"marcas",n:"Primeiro vídeo de marketing para a escola de futebol infantil.",u:"https://youtube.com/shorts/ROXZ-QMTjr0",v:true,g:"linear-gradient(130deg,#0E2A1F,#1F7A4A 60%,#B8D9C4)"},
-    {t:"New Football 2",c:"New Football",k:"Marketing",cat:"marcas",n:"Segundo vídeo de marketing para a escola de futebol infantil.",u:"https://youtube.com/shorts/mAru3CKi5_g",v:true,g:"linear-gradient(130deg,#0E2A1F,#1F7A4A 60%,#B8D9C4)"},
-    {t:"New Football 3",c:"New Football",k:"Marketing",cat:"marcas",n:"Terceiro vídeo de marketing para a escola de futebol infantil.",u:"https://youtube.com/shorts/iVbT7FRSvJ0",v:true,g:"linear-gradient(130deg,#0E2A1F,#1F7A4A 60%,#B8D9C4)"}
+    {t:"Obra do engenheiro",c:"William Lucas Engenheiro",k:"Obras",cat:"obras",n:"Apresentação da obra de uma casa pelo engenheiro.",u:"https://vimeo.com/1238507903",img:"img/42.webp",v:true},
+    {t:"Drinks do Dionys",c:"Dionys Cocktail Bar",k:"Bar",cat:"eventos",n:"Os drinks do Dionys servidos em um casamento.",u:"https://youtube.com/shorts/2T1SuvEYIMU",img:IMGS.c1,v:true},
+    {t:"Drinks do Dionys 2",c:"Dionys Cocktail Bar",k:"Bar",cat:"eventos",n:"Outro momento do bar do Dionys na festa de casamento.",u:"https://youtube.com/shorts/kyGGi0E7Fys",img:IMGS.c2,v:true},
+    {t:"Evento de Halloween",c:"Panobianco Academia",k:"Marketing",cat:"marcas",n:"Vídeo estrutural do evento de Halloween da academia.",u:"https://youtube.com/shorts/stY5KDQRVO4",img:IMGS.pano,v:true},
+    {t:"Panobianco Academia 2",c:"Panobianco Academia",k:"Marketing",cat:"marcas",n:"Segundo vídeo feito para a academia.",u:"https://youtube.com/shorts/sSCpN7Qy6mk",v:true},
+    {t:"Panobianco Academia 3",c:"Panobianco Academia",k:"Marketing",cat:"marcas",n:"Terceiro vídeo feito para a academia.",u:"https://youtube.com/shorts/xyLomZXbU-U",v:true},
+    {t:"Obra do engenheiro 2",c:"William Lucas Engenheiro",k:"Obras",cat:"obras",n:"Segundo vídeo apresentando a obra.",u:"https://youtube.com/shorts/eD_Vx5p5Ti4",v:true},
+    {t:"Obra do engenheiro 3",c:"William Lucas Engenheiro",k:"Obras",cat:"obras",n:"Terceiro vídeo apresentando a obra.",u:"https://youtube.com/shorts/vPe7XS-DW-I",v:true},
+    {t:"New Football 1",c:"New Football",k:"Marketing",cat:"marcas",n:"Primeiro vídeo de marketing para a escola de futebol infantil.",u:"https://youtube.com/shorts/ROXZ-QMTjr0",v:true},
+    {t:"New Football 2",c:"New Football",k:"Marketing",cat:"marcas",n:"Segundo vídeo de marketing para a escola de futebol infantil.",u:"https://youtube.com/shorts/mAru3CKi5_g",v:true},
+    {t:"New Football 3",c:"New Football",k:"Marketing",cat:"marcas",n:"Terceiro vídeo de marketing para a escola de futebol infantil.",u:"https://youtube.com/shorts/iVbT7FRSvJ0",v:true}
   ],
   albums:[   // álbuns da aba Fotos: cover = capa (opcional), photos = lista de fotos
     {t:"Jade e Ricardo",c:"Casamento",n:"Cerimônia e momentos do casamento.",cover:IMGS.jr,photos:PHOTOS_JR},
@@ -729,16 +750,10 @@ var CONFIG={
 (function(){
   var wa=CONFIG.whatsapp;
   document.querySelectorAll(".js-wa").forEach(function(a){a.href=wa;a.target="_blank";a.rel="noopener"});
-  var subj="Orçamento de vídeo",body="Oi, Danilo! Quero conversar sobre um vídeo.\n\nTipo de vídeo:\nData:\nCidade:",ml=document.getElementById("mail");
+  var subj="Orçamento de vídeo ou fotos",body="Oi, Danilo! Vim pelo seu portfólio e quero um orçamento.\n\nServiço (vídeo ou fotos):\nData:\nCidade:",ml=document.getElementById("mail");
   if(window.self!==window.top){ml.href="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(CONFIG.email)+"&su="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);ml.target="_blank";ml.rel="noopener"}
   else{ml.href="mailto:"+CONFIG.email+"?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);ml.removeAttribute("target")}
   var et=document.getElementById("emailtxt");if(et)et.textContent=CONFIG.email;
-  var cb=document.getElementById("copy");
-  if(cb)cb.addEventListener("click",function(){
-    var done=function(){cb.textContent="Copiado!";setTimeout(function(){cb.textContent="Copiar"},2000)};
-    var fb=function(){var t=document.createElement("textarea");t.value=CONFIG.email;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");done()}catch(e){}t.remove()};
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(CONFIG.email).then(done,fb)}else{fb()}
-  });
   document.getElementById("ig").href=CONFIG.instagram;
 
   if(CONFIG.reel){var v=document.createElement("video");v.src=CONFIG.reel;v.preload="metadata";v.muted=true;v.loop=true;v.autoplay=true;v.playsInline=true;document.getElementById("reel").appendChild(v);}
@@ -748,7 +763,7 @@ var CONFIG={
   CONFIG.works.sort(function(a,b){var pr=function(w){var c=w.c||"";return /Dionys/i.test(c)?0:/Panobianco/i.test(c)?1:2};return pr(a)-pr(b)});
   CONFIG.works.forEach(function(w,i){
     var b=document.createElement("button");b.className="work "+(w.v?"v":"h");b.dataset.cat=w.cat;b.dataset.i=i;
-    b.innerHTML='<div class="thumb" style="--g:'+w.g+'"><i class="tb"></i><span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg></span></div><h3></h3><p class="meta"></p><p class="note"></p>';
+    b.innerHTML='<div class="thumb" style="--g:'+(w.g||GR)+'"><i class="tb"></i><span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg></span></div><h3></h3><p class="meta"></p><p class="note"></p>';
     var ci=w.img||ytThumb(w.u);if(ci){var im=document.createElement("img");im.alt="";im.loading="lazy";im.decoding="async";loadThumb(im,w);var th=b.querySelector(".thumb");th.insertBefore(im,th.querySelector(".play"))}
     b.querySelector("h3").textContent=w.t;b.querySelector(".meta").textContent=(w.c?w.c+" · ":"")+w.k;b.querySelector(".note").textContent=w.n||"";
     if(w.soon){b.classList.add("soon");b.disabled=true;b.hidden=true;var pl=b.querySelector(".play");if(pl)pl.remove()}else{addTrace(b,b.querySelector(".thumb"))}
@@ -795,7 +810,7 @@ var CONFIG={
   window.addEventListener("scroll",hdrCheck,{passive:true});hdrCheck();
   var m2=document.getElementById("mail2");if(m2)m2.href="mailto:"+CONFIG.email;
 
-  /* menu do celular */
+  /* botão flutuante: leva ao formulário de orçamento */
   var mbtn=document.getElementById("mbtn"),mnav=document.getElementById("mnav");
   function menu(open){
     document.body.classList.toggle("mopen",open);mbtn.setAttribute("aria-expanded",open);mbtn.setAttribute("aria-label",open?"Fechar menu":"Abrir menu");
@@ -838,7 +853,7 @@ var CONFIG={
     cgrid.innerHTML="";
     ws.forEach(function(w){
       var b=document.createElement("button");b.className="work "+(w.v?"v":"h");
-      b.innerHTML='<div class="thumb" style="--g:'+w.g+'"><i class="tb"></i><span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg></span></div><h3></h3><p class="note"></p>';
+      b.innerHTML='<div class="thumb" style="--g:'+(w.g||GR)+'"><i class="tb"></i><span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg></span></div><h3></h3><p class="note"></p>';
       var im=document.createElement("img");im.alt="";im.loading="lazy";im.decoding="async";loadThumb(im,w);var th=b.querySelector(".thumb");th.insertBefore(im,th.querySelector(".play"));
       b.querySelector("h3").textContent=w.t;b.querySelector(".note").textContent=w.n||"";
       b.addEventListener("click",function(){openVideo(w)});cgrid.appendChild(b);
@@ -929,12 +944,12 @@ var CONFIG={
   (CONFIG.albums||[]).forEach(function(a){
     var b=document.createElement("button");b.className="album";
     b.innerHTML='<div class="thumb"><i class="tb"></i></div><h3></h3><p class="meta"></p><p class="note"></p>';
-    var th=b.querySelector(".thumb");th.style.setProperty("--g",a.g||"linear-gradient(130deg,#2E1F0D,#8C7961 65%,#C9B79E)");
-    var cv=a.cover||a.photos[0];if(cv){var im=document.createElement("img");im.alt="";im.loading="lazy";im.decoding="async";im.src=cv;th.appendChild(im)}
+    var th=b.querySelector(".thumb");th.style.setProperty("--g",a.g||GR);
+    var cv=a.cover||a.photos[0];if(cv){var im=document.createElement("img");im.alt="";im.loading="lazy";im.decoding="async";im.src=cv;th.appendChild(im)}var ph=document.createElement("span");ph.className="ph";ph.textContent=a.photos.length+" fotos";th.appendChild(ph);
     b.querySelector("h3").textContent=a.t;
     b.querySelector(".meta").textContent=(a.c?a.c+" · ":"")+a.photos.length+(a.photos.length>1?" fotos":" foto");
     b.querySelector(".note").textContent=a.n||"";
-    b.addEventListener("click",function(){openAlbum(a)});albEl.appendChild(b);
+    b.addEventListener("click",function(){openAlbum(a)});albEl.appendChild(b);addTrace(b,th);
   });
   var gw=document.querySelector(".gwrap"),gp=gw.querySelector(".prev"),gn=gw.querySelector(".next");
   window.gUpdate=function(){var mx=grid.scrollWidth-grid.clientWidth;gw.classList.toggle("noscroll",mx<6);gp.classList.toggle("off",grid.scrollLeft<4);gn.classList.toggle("off",grid.scrollLeft>mx-4)};
@@ -958,10 +973,10 @@ var CONFIG={
     var H=ALL.slice(),hi=0,hth=hc.querySelector(".thumb"),hst=hc.querySelector(".hstage"),hd=hc.querySelector(".hdots"),hn=hc.querySelector(".hcount");
     var go=function(i){
       if(!H.length)return;
-      hi=(i+H.length)%H.length;var w=H[hi];hth.style.setProperty("--g",w.g);
+      hi=(i+H.length)%H.length;var w=H[hi];hth.style.setProperty("--g",(w.g||GR));
       var old=hth.querySelector("img");if(old)old.remove();
       var ci=w.img||ytThumb(w.u);if(ci){var im=document.createElement("img");im.alt="";im.loading="lazy";im.decoding="async";loadThumb(im,w);hth.insertBefore(im,hth.querySelector(".play"))}
-      hc.querySelector("h3").textContent=w.t;hc.querySelector(".meta").textContent=w.c+" · "+w.k;hc.querySelector(".note").textContent=w.n;
+      var h3=hc.querySelector("h3");h3.textContent=w.t;h3.dataset.n=(hi<9?"0":"")+(hi+1);hc.querySelector(".meta").textContent=w.c+" · "+w.k;hc.querySelector(".note").textContent=w.n;
       hn.textContent=H.length>1?(hi+1)+" / "+H.length:"";
       [].forEach.call(hd.children,function(d,j){d.setAttribute("aria-current",j===hi?"true":"false")});
       hst.classList.remove("anim");void hst.offsetWidth;hst.classList.add("anim");
@@ -978,7 +993,8 @@ var CONFIG={
     return function(f){H=ALL.filter(function(w){return f==="all"||w.cat===f});hc.hidden=!H.length;build();go(0)};
   }
   var cars=[initCar("hcar",CONFIG.horizontal||[]),initCar("hcar2",CONFIG.horizontal2||[])].filter(Boolean);
-  window.hFilter=function(f){cars.forEach(function(c){c(f)})};
+  var hwrap=document.getElementById("hwrap");function hwCheck(){hwrap.hidden=![].some.call(hwrap.querySelectorAll(".hcar"),function(h){return !h.hidden&&h.querySelector("h3").textContent})}
+  window.hFilter=function(f){cars.forEach(function(c){c(f)});hwCheck()};hwCheck();
   function embed(u){
     var m=u.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/);if(m)return"https://player.vimeo.com/video/"+m[1]+"?badge=0&autopause=0&player_id=0&app_id=58479"+(m[2]?"&h="+m[2]:"");
     m=u.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);if(m)return"https://www.youtube.com/embed/"+m[1]+"";
